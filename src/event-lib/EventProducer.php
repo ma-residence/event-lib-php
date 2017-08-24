@@ -26,7 +26,8 @@ class EventProducer
 
     protected function publishEvent(EventMessage $eventMessage)
     {
-        $this->logger->info("Publishing an event message '{$eventMessage->getEvent()}' for {$eventMessage->getEvent()}:{$eventMessage->getId()}");
+        $id = is_array($eventMessage->getId()) ? json_encode($eventMessage->getId()) : $eventMessage->getId();
+        $this->logger->info("Publishing an event message '{$eventMessage->getEvent()}' for {$eventMessage->getModelType()}:{$id}");
 
         $this->producer->publish($eventMessage->jsonSerialize());
     }

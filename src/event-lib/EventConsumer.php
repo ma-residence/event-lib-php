@@ -23,7 +23,8 @@ abstract class EventConsumer implements ConsumerInterface
     {
         $eventMessage = (new EventMessage())->jsonUnserialize($msg->getBody());
 
-        $this->logger->info("Consuming event message '{$eventMessage->getEvent()}' for {$eventMessage->getModelType()}:{$eventMessage->getId()}");
+        $id = is_array($eventMessage->getId()) ? json_encode($eventMessage->getId()) : $eventMessage->getId();
+        $this->logger->info("Consuming event message '{$eventMessage->getEvent()}' for {$eventMessage->getModelType()}:{$id}");
 
         return $this->consumeEvent($eventMessage);
     }
