@@ -25,8 +25,8 @@ abstract class EventConsumer implements ConsumerInterface
 
         $this->logger->info("Consuming event message '{$eventMessage->getEvent()}' for {$eventMessage->getModelType()}:{$eventMessage->getId()}");
 
-        $this->consumeEvent($eventMessage);
+        return $this->consumeEvent($eventMessage);
     }
 
-    protected abstract function consumeEvent(EventMessage $eventMessage);
+    protected abstract function consumeEvent(EventMessage $eventMessage): int;
 }
