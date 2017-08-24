@@ -16,7 +16,7 @@ class EventProducer
     /**
      * @var LoggerInterface
      */
-    private $logger;
+    protected $logger;
 
     public function __construct(Producer $producer, LoggerInterface $logger = null)
     {

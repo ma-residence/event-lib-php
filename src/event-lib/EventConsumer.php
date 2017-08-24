@@ -12,7 +12,7 @@ abstract class EventConsumer implements ConsumerInterface
     /**
      * @var LoggerInterface
      */
-    private $logger;
+    protected $logger;
 
     public function __construct(LoggerInterface $logger = null)
     {
