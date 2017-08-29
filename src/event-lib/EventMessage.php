@@ -75,7 +75,7 @@ final class EventMessage implements \JsonSerializable
 
     public function jsonUnserialize(string $json): EventMessage
     {
-        if (false === $data = json_decode($json)) {
+        if (false === $data = json_decode($json, true)) {
             throw EventException::errorDuringUnserialization(json_last_error_msg());
         }
 
