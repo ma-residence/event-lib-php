@@ -29,5 +29,5 @@ abstract class EventConsumer implements ConsumerInterface
         return $this->consumeEvent($eventMessage);
     }
 
-    protected abstract function consumeEvent(EventMessage $eventMessage): int;
+    abstract protected function consumeEvent(EventMessage $eventMessage): int;
 }
