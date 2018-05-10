@@ -6,8 +6,11 @@ use Greg0ire\Enum\AbstractEnum;
 
 final class EventType extends AbstractEnum
 {
+    // Doctrine Events
     const CREATED = 'created';
     const UPDATED = 'updated';
     const DELETED = 'deleted';
-    const ASK_CONFIRMATION_CODE = 'ask_confirmation_code';
+
+    // Demand Events
+    const DEMAND_PENDING = 'demand_pending';
 }
