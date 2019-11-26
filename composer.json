@@ -2,7 +2,7 @@
     "name": "ma-residence/event-lib",
     "type": "library",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2",
         "php-amqplib/rabbitmq-bundle": "^1.14",
         "greg0ire/enum": "^4"
     },
