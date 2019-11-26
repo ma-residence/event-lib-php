@@ -10,7 +10,4 @@ final class EventType extends AbstractEnum
     const CREATED = 'created';
     const UPDATED = 'updated';
     const DELETED = 'deleted';
-
-    // Demand Events
-    const DEMAND_PENDING = 'demand_pending';
 }

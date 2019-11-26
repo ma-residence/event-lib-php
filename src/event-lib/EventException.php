@@ -11,11 +11,7 @@ class EventException extends \Exception
 
     public static function invalidIdFormat($id): self
     {
-        if (is_object($id)) {
-            $type = get_class($id);
-        } else {
-            $type = gettype($id);
-        }
+        $type = is_object($id) ? get_class($id) : gettype($id);
 
         return new self("The given id is a '$type' instead of a string or an array.");
     }
